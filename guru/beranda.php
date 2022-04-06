@@ -1,6 +1,6 @@
 <?php
 require 'koneksi.php';
-session_start();
+include '../backend/berita.php';
 ?>
 
 <!DOCTYPE html>
