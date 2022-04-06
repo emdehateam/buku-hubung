@@ -14,7 +14,7 @@ include '../backend/berita.php';
     <link href="../assets/font-awesome/css/all.min.css" rel="stylesheet" type="text/css">
     <link href="../assets/vendor/fontawesome-free/css/all.min.css" rel="stylesheet" type="text/css">
     <link href="../assets/css/sb-admin-2.min.css" rel="stylesheet">
-
+<!-- ini style navbar -->
     <link href="../assets/css/navbar-style.css" rel="stylesheet" type="text/css">
 </head>
 <style>
