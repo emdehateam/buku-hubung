@@ -1,4 +1,5 @@
 <?php 
+<<<<<<< HEAD
 include "koneksi.php";
 // proses tambah berita
 if(!empty($_GET['aksi'] == 'tambah'))
@@ -19,4 +20,12 @@ if(!empty($_GET['aksi'] == 'tambah'))
           $koneksi->close();
     }
 }
+=======
+include "connect.php";
+session_start();
+
+$query    = $conn->query("SELECT * FROM berita", PDO::FETCH_ASSOC);
+$data     = $query->fetch();
+$num_rows = $query->rowCount();
+>>>>>>> cead4a3a6e27a1b59bcb9b597f075fc368124a05
 ?>

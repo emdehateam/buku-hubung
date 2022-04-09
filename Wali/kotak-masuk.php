@@ -19,8 +19,15 @@
 
     <!-- Custom styles for this template-->
     <link href="../assets/css/sb-admin-2.min.css" rel="stylesheet">
+<<<<<<< HEAD
     <!-- <link href="assets/css/style-pesan.css" rel="stylesheet"> -->
     <link href="../assets/css/navbar-style.css" rel="stylesheet" type="text/css">
+=======
+
+    <link href="../assets/css/style-pesan.css" rel="stylesheet">
+    <link href="../assets/css/navbar-style.css" rel="stylesheet" type="text/css">
+
+>>>>>>> cead4a3a6e27a1b59bcb9b597f075fc368124a05
 </head>
 <style>
     body {
