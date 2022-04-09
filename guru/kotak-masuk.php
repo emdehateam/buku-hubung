@@ -1,5 +1,6 @@
-<?php include('../backend/kontak_wali.php'); 
-require 'auth.php';
+<?php 
+include('../backend/kontak_wali.php'); 
+//require 'auth.php';
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -12,7 +13,7 @@ require 'auth.php';
     <meta name="description" content="">
     <meta name="author" content="">
 
-    <title>Kotak</title>
+    <title>Kotak Masuk</title>
 
     <!-- Custom fonts for this template-->
     <link href="../assets/vendor/fontawesome-free/css/all.min.css" rel="stylesheet" type="text/css">
@@ -88,7 +89,7 @@ require 'auth.php';
                     </a>
 
                 </li>
-                <li class="list">
+                <li class="list active">
                     <a href="kotak-masuk.php">
                         <span class="icon"><i class="fa fa-comments" aria-hidden="true"></i></span>
                         <span class="text">Chat</span>
@@ -100,7 +101,7 @@ require 'auth.php';
                         <span class="text">Nilai</span>
                     </a>
                 </li>
-                <li class="list active">
+                <li class="list">
                     <a href="lainnya.php">
                         <span class="icon"><i class="fa fa-cogs" aria-hidden="true"></i></span>
                         <span class="text">Lainnya</span>

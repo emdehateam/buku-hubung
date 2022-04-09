@@ -1,7 +1,7 @@
 <?php
 require 'koneksi.php';
-session_start();
 require 'auth.php';
+$username = $_SESSION['username'];
 ?>
 
 <!DOCTYPE html>
@@ -33,6 +33,13 @@ require 'auth.php';
 
         background-size: cover;
 
+    }
+    h4,h5{
+        color: black;
+        font-family: Verdana, Geneva, Tahoma, sans-serif;
+    }
+    h5{
+        font-size: 14px;
     }
 </style>
 
@@ -85,12 +92,36 @@ require 'auth.php';
     </nav>
     <div class="container">
         <br>
-        <a class="btn btn-success float-right" href=""><span><i class="fa fa-plus fa-1x" aria-hidden="true"></i>Tambah Data Diri Anak</span></a>
+        <a class="btn btn-success float-right" href="tambah/tambah_anak.php"><span><i class="fa fa-plus fa-1x" aria-hidden="true"></i>Tambah Data Diri Anak</span></a>
         <br>
         <br>
+        <?php 
+            
+            $data = mysqli_query($koneksi, "SELECT * FROM wali WHERE username='$username'");
+                while ($result = mysqli_fetch_array($data)) {
+                    $id = $result['id'];
+                }
+        ?>
         <div class="card">
             <div class="card-body">
-                Data Diri Siswa
+                <div class="card border-3">
+                    <a class="card-block stretched-link text-decoration-none" href="">
+                        <div class="card-body">
+                            <?php
+                            $no = 1;
+                            $data = mysqli_query($koneksi, "SELECT * FROM siswa WHERE wali_id = $id");
+                            while ($result = mysqli_fetch_array($data)) {
+
+                            ?>
+                            <hr>
+                            <h4>Anak ke- <?= $no++; ?></h4>
+                            <h5 class="card-title"><b>Nama Siswa</b><span> : </span><?= $result['nama']; ?></h5>
+                            <h5><b>Kelas</b><span> : </span><?= $result['kelas']; ?> </h5>
+                            <h5><b>No Absen</b><span> : </span><?= $result['absen']; ?> </h5>
+                            <?php } ?>
+                        </div>
+                    </a>
+                </div>
             </div>
 
         </div>
@@ -103,7 +134,7 @@ require 'auth.php';
         </div>
         <?php
         $no = 1;
-        $data = mysqli_query($koneksi, "select * from berita");
+        $data = mysqli_query($koneksi, "SELECT * FROM berita ORDER BY id DESC");
         while ($result = mysqli_fetch_array($data)) {
 
         ?>

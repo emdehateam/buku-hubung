@@ -1,7 +1,6 @@
 <?php
 require 'koneksi.php';
 //session_start();
-require 'auth.php';
 ?>
 
 <!DOCTYPE html>
@@ -71,13 +70,47 @@ require 'auth.php';
         transform: translate(-50%, -50%);
     }
 </style>
-    <div class="bg-nav"></div>
-    <nav class="navbar-fixed-top">
+<nav class="navbar-fixed-top">
         <div class="navigation">
             <ul>
-                <li class="">
-                    <a class="nav-link" href="berita.php"><i class="fa fa-arrow-left" style="font-size:24px"></i><span class="sr-only">(current)</span></a>
+                <li class="list">
+                    <a href="beranda.php">
+                        <span class="icon"><i class="fa fa-home" aria-hidden="true"></i></span>
+                        <span class="text">Home</span>
+                    </a>
                 </li>
+                <li class="list active">
+                    <a href="berita.php">
+                        <span class="icon"><i class="fa fa-newspaper" aria-hidden="true"></i></span>
+                        <span class="text">Berita</span>
+                    </a>
+
+                </li>
+                <li class="list">
+                    <a href="kotak-masuk.php">
+                        <span class="icon"><i class="fa fa-comments" aria-hidden="true"></i></span>
+                        <span class="text">Chat</span>
+                    </a>
+
+                </li>
+                <li class="list">
+                    <a href="nilai.php">
+                        <span class="icon"><i class="fa fa-graduation-cap" aria-hidden="true"></i></span>
+                        <span class="text">Nilai</span>
+
+                    </a>
+
+                </li>
+                <li class="list">
+                    <a href="lainnya.php">
+                        <span class="icon"><i class="fa fa-cogs" aria-hidden="true"></i></span>
+                        <span class="text">Lainnya</span>
+                    </a>
+
+                </li>
+                <div class="indicator">
+
+                </div>
             </ul>
 
         </div>
@@ -93,9 +126,30 @@ require 'auth.php';
         ?>
             <div class="card">
                 <div class="card-body">
-                    <h4 class="card-title"><?= $result['judul_berita']; ?></h4>
-                    <br>
-                    <p><?= $result['deskripsi']; ?></p>
+                    <h4 class="card-title text-center" style="color: black;"><b><?= $result['judul_berita']; ?></b></h4>
+                    <hr>
+                    <?php
+ 
+							// membaca input dari form
+							$input = $result['deskripsi'];
+							
+							// memecah string input berdasarkan karakter '\r\n\r\n'
+							$pecah = explode("\r\n\r\n", $input);
+							
+							// string kosong inisialisasi
+							$text = "";
+							
+							// untuk setiap substring hasil pecahan, sisipkan <p> di awal dan </p> di akhir
+							// lalu menggabungnya menjadi satu string utuh $text
+							for ($i=0; $i<=count($pecah)-1; $i++)
+							{
+								$part = str_replace($pecah[$i], "<p>".$pecah[$i]."</p>", $pecah[$i]);
+								$text .= $part;
+							}
+							
+							
+							?>
+							<p><?php echo $text?></p>
                 </div>
                 <div class="card-footer">
                     <p class="small text-muted"><?= $result['tanggal_post']; ?></p>

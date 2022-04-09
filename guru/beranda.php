@@ -1,7 +1,7 @@
 <?php
 require 'koneksi.php';
-include '../backend/berita.php';
 require 'auth.php';
+$username = $_SESSION['username'];
 ?>
 
 <!DOCTYPE html>
@@ -33,7 +33,6 @@ require 'auth.php';
         /* IE6-9 */
 
         background-size: cover;
-
     }
 </style>
 
@@ -93,12 +92,12 @@ require 'auth.php';
             <i class="fa fa-bell" aria-hidden="true"></i>
 
         </div>
-        <a class="btn btn-success float-right" href=""><span><i class="fa fa-plus fa-1x" aria-hidden="true"></i>Tambah Pengumuman</span></a>
+        <a class="btn btn-success float-right" href="tambah/tambah_berita.php"><span><i class="fa fa-plus fa-1x" aria-hidden="true"></i>Tambah Pengumuman</span></a>
         <br>
         <hr>
         <?php
         $no = 1;
-        $data = mysqli_query($koneksi, "select * from berita");
+        $data = mysqli_query($koneksi, "SELECT * FROM berita ORDER BY id DESC");
         while ($result = mysqli_fetch_array($data)) {
 
         ?>

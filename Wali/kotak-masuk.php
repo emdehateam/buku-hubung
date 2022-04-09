@@ -1,5 +1,5 @@
 <?php include('../backend/kontak_guru.php'); 
-require 'auth.php';
+//require 'auth.php';
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -88,7 +88,7 @@ require 'auth.php';
                     </a>
 
                 </li>
-                <li class="list">
+                <li class="list active">
                     <a href="kotak-masuk.php">
                         <span class="icon"><i class="fa fa-comments" aria-hidden="true"></i></span>
                         <span class="text">Chat</span>
@@ -100,7 +100,7 @@ require 'auth.php';
                         <span class="text">Nilai</span>
                     </a>
                 </li>
-                <li class="list active">
+                <li class="list">
                     <a href="lainnya.php">
                         <span class="icon"><i class="fa fa-cogs" aria-hidden="true"></i></span>
                         <span class="text">Lainnya</span>

@@ -1,7 +1,6 @@
 <?php
 require 'koneksi.php';
 session_start();
-require 'auth.php';
 ?>
 
 <!DOCTYPE html>
@@ -84,12 +83,12 @@ require 'auth.php';
     </nav>
     <div class="container">
         <br>
-        <a class="btn btn-success float-right" href=""><span><i class="fa fa-plus fa-1x" aria-hidden="true"></i>Tambah Berita</span></a>
+        <a class="btn btn-success float-right" href="tambah/tambah_berita.php"><span><i class="fa fa-plus fa-1x" aria-hidden="true"></i>Tambah Berita dan Pengumuman</span></a>
         <br>
         <hr>
         <?php
         $no = 1;
-        $data = mysqli_query($koneksi, "select * from berita");
+        $data = mysqli_query($koneksi, "SELECT * FROM berita ORDER BY id DESC");
         while ($result = mysqli_fetch_array($data)) {
 
         ?>
@@ -107,18 +106,6 @@ require 'auth.php';
         <?php } ?>
 
     </div>
-    <!-- <script>
-    const list = document.querySelectorAll('.list');
-
-    function activeLink() {
-      list.forEach((item) =>
-        item.classList.remove('active'));
-      this.classList.add('active');
-    }
-    list.forEach((item) =>
-      item.addEventListener('click', activeLink));
-  </script> -->
-
 </body>
 
 </html>

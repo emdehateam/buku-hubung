@@ -1,5 +1,6 @@
 <?php
 require 'koneksi.php';
+require 'auth.php';
 //session_start();
 ?>
 
@@ -21,8 +22,10 @@ require 'koneksi.php';
     <link href="https://fonts.googleapis.com/css?family=Nunito:200,200i,300,300i,400,400i,600,600i,700,700i,800,800i,900,900i" rel="stylesheet">
 
     <!-- Custom styles for this template-->
+    <link href="../assets/font-awesome/css/all.min.css" rel="stylesheet" type="text/css">
+    <link href="../assets/vendor/fontawesome-free/css/all.min.css" rel="stylesheet" type="text/css">
     <link href="../assets/css/sb-admin-2.min.css" rel="stylesheet">
-    <link rel="stylesheet" type="text/css" href="../assets/css/style-navbar.css">
+    <link href="../assets/css/navbar-style.css" rel="stylesheet" type="text/css">
 
 </head>
 <style>
@@ -71,85 +74,52 @@ require 'koneksi.php';
     }
 </style>
 
-<body class="bg-gradient-light">
-    <nav class="navbar navbar-light bg-gradient-light fixed-top">
-        <a class="navbar-brand" href="#">Beranda</a>
-        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
-            <span class="navbar-toggler-icon"></span>
-        </button>
-        <div class="collapse navbar-collapse scrollmenu justify-content-center" id="navbarNav">
-            <ul class="navbar-nav hover-zoom ">
-                <li class="nav-item active">
-                    <a class="nav-link active" href="beranda.php">Home <span class="sr-only">(current)</span></a>
+<body class="">
+<div class="bg-nav"></div>
+    <nav class="navbar-fixed-top">
+        <div class="navigation">
+            <ul>
+                <li class="list">
+                    <a href="beranda.php">
+                        <span class="icon"><i class="fa fa-home" aria-hidden="true"></i></span>
+                        <span class="text">Home</span>
+                    </a>
                 </li>
-                <li class="nav-item">
-                    <a class="nav-link" href="artikel.php">Berita</a>
-                </li>
-                <li class="nav-item">
-                    <a class="nav-link" href="kotak-masuk.php">Kotak Masuk</a>
-                </li>
-                <li class="nav-item">
-                    <a class="nav-link" href="tulis-pesan.php">Tulis pesan</a>
-                </li>
-                <li class="nav-item">
-                    <a class="nav-link" href="skor-harian.php">Skor Harian</a>
-                </li>
-                <li class="nav-item">
-                    <a class="nav-link" href="skor-karakter.php">Skor Karakter</a>
-                </li>
-            </ul>
-        </div>
-        <ul class="nav nav-tabs" style="font-size:20px; margin-left: auto; margin-right: auto; ">
-            <li id="carousel">
-                <a href="beranda.php">
-                    <span class="img">
-                        <figure>
-                            <img src="../assets/icon/house.png">
-                            <figcaption>
-                                Beranda
-                            </figcaption>
-                        </figure>
-                    </span>
-                </a>
-            </li>
-            <li id="carousel">
-                <a href="artikel.php">
-                    <span class="img">
-                        <figure>
-                            <img src="../assets/icon/news.png">
-                            <figcaption>
-                                Berita
-                            </figcaption>
-                        </figure>
-                    </span>
-                </a>
-            </li>
-            <li id="carousel">
-                <a href="tulis-pesan.php">
-                    <span class="img">
-                        <figure>
-                            <img src="../assets/icon/edition.png">
-                            <figcaption>
-                                Tulis Pesan
-                            </figcaption>
-                        </figure>
-                    </span>
-                </a>
-            </li>
-            <li id="carousel">
-                <a href="#pesan.php">
-                    <span class="img">
-                        <figure>
-                            <img src="../assets/icon/messenger.png">
-                            <figcaption>
-                                Chats
-                            </figcaption>
-                        </figure>
-                    </span>
-                </a>
-            </li>
+                <li class="list active">
+                    <a href="berita.php">
+                        <span class="icon"><i class="fa fa-newspaper" aria-hidden="true"></i></span>
+                        <span class="text">Berita</span>
+                    </a>
 
-        </ul>
+                </li>
+                <li class="list">
+                    <a href="kotak-masuk.php">
+                        <span class="icon"><i class="fa fa-comments" aria-hidden="true"></i></span>
+                        <span class="text">Chat</span>
+                    </a>
+
+                </li>
+                <li class="list">
+                    <a href="nilai.php">
+                        <span class="icon"><i class="fa fa-graduation-cap" aria-hidden="true"></i></span>
+                        <span class="text">Nilai</span>
+
+                    </a>
+
+                </li>
+                <li class="list">
+                    <a href="lainnya.php">
+                        <span class="icon"><i class="fa fa-cogs" aria-hidden="true"></i></span>
+                        <span class="text">Lainnya</span>
+                    </a>
+
+                </li>
+                <div class="indicator">
+
+                </div>
+            </ul>
+
+        </div>
     </nav>
     <div class="container" style="margin-top: 140px;">
         <br>

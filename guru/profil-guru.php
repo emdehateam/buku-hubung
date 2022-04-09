@@ -1,6 +1,9 @@
-<?php
-require 'auth.php';
+<?php 
+include 'auth.php';
+require 'koneksi.php';
+$username = $_SESSION['username'];
 ?>
+
 <!DOCTYPE html>
 <html lang="en">
 
@@ -38,6 +41,10 @@ require 'auth.php';
 
         background-size: cover;
 
+    }
+    img{
+        width: 30px;
+        height: 150px;
     }
 
     #top a {
@@ -114,29 +121,46 @@ require 'auth.php';
         <div class="row">
             <div class="card mx-auto">
                 <br>
-                <img class="card-img-top" style="margin-top: 13px;" src="../assets/img/avatar-cewek.png" alt="Card image">
+                <img class="card-img" src="../assets/img/avatar-cewek.png" alt="Card image">
                 <div class="card-body">
-                    <h4 class="card-title">Dewi Puji <span>-</span> <b>Guru</b></h4>
+                    <h4 class="card-title"><?= $username; ?><span> -</span> <b>Guru</b></h4>
                     <br>
                     <table class="table table-borderless padding-large">
+                    <?php
+                    $data = mysqli_query($koneksi, "SELECT * FROM guru WHERE username='$username'");
+                    while ($result = mysqli_fetch_array($data)) {
+                        $nip = $result['nip'];
+
+                    ?>
                         <tr>
-                            <th>Nama</th>
+                            <th>NIP</th>
                             <th> : </th>
-                            <td>Dewi Puji</td>
+                            <td><?= $result['username']; ?></td>
 
                         </tr>
                         <tr>
-                            <th>ID Pengguna</th>
+                            <th>Nama Lengkap</th>
                             <th> : </th>
-                            <td>01234567889</td>
+                            <td><?= $result['nama']; ?></td>
+                        </tr>
+                        <tr>
+                            <th>No Telepon</th>
+                            <th> : </th>
+                            <td><?= $result['no_hp']; ?></td>
                         </tr>
                         <tr>
                             <th>Alamat</th>
                             <th> : </th>
-                            <td>Jakarta Barat, Indonesia</td>
+                            <td><?= $result['alamat']; ?></td>
                         </tr>
+                        <?php } ?>
 
                     </table>
+                    <div class="row">
+                        <div class="col d-flex justify-content-end">
+                            <a href="edit/edit_profil.php?nip=<?= $nip;?>" class="btn btn-warning btn-md">Edit Profil</a>
+                        </div>
+                    </div>
                     <br>
 
                 </div>

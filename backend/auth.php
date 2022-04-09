@@ -8,7 +8,7 @@ if($_SESSION){
     }
     if($_SESSION['level']==2){
         // ke halaman wali
-        header('location:../Wali/beranda.php');
+        header('location:../wali/beranda.php');
     }
 }else{
     // ke halaman login
