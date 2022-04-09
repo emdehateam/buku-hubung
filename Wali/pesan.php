@@ -1,11 +1,6 @@
-<<<<<<< HEAD
 <?php 
 include('../backend/lihat_chat.php');
 //require 'auth.php';
-=======
-<?php include('../backend/lihat_chat.php');
-require 'auth.php';
->>>>>>> 4c3050cd9222bbba80ba9e9c3c6f20f7e842aa6b
 ?>
 <!DOCTYPE html>
 <html lang="en">
